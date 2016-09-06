@@ -10,7 +10,9 @@ import {
 import {Actions} from 'react-native-router-flux';
 import Button from 'react-native-button';
 
-export default class Page1_1 extends Component {
+export default class HomeDetail extends Component {
+
+
     render() {
         return (
             <View style={styles.container}>
