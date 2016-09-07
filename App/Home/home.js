@@ -15,7 +15,7 @@ import {Actions} from 'react-native-router-flux';
 
 import {GetRequestData} from '../comm/http';
 import List from 'react-native-listview-refresher';
-import Swiper from  '../comm/swiper.dist'
+import Swiper from 'react-native-swiper';
 
 export default class Home extends Component {
     constructor(props) {

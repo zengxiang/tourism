@@ -6,10 +6,11 @@
     "start": "node node_modules/react-native/local-cli/cli.js start"
   },
   "dependencies": {
-    "react":"^15.3.1",
-    "react-native":"^0.32.0",
-    "react-native-button":"^1.7.0",
-    "react-native-listview-refresher":"^1.0.3",
-    "react-native-router-flux":"^3.35.0"
+    "react": "^15.3.1",
+    "react-native": "^0.32.0",
+    "react-native-button": "^1.7.0",
+    "react-native-listview-refresher": "^1.0.3",
+    "react-native-router-flux": "^3.35.0",
+    "react-native-swiper": "^1.4.11"
   }
 }
