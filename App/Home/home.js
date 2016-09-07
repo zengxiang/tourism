@@ -69,9 +69,9 @@ export default class Home extends Component {
     fetch = (page = 1, callback, options)=> {
         
         GetRequestData('',{},function(responseData){
-            alert(responseData);
+            alert(JSON.stringify(responseData));
         },function (error) {
-            alert(error);
+            alert(JSON.stringify(error));
         });
 
         setTimeout(() => {
@@ -81,7 +81,7 @@ export default class Home extends Component {
 
     renderRow = (data, sectionID, rowID) => {
         return <View key={rowID} style={{height: 100, width: 300}}>
-                <Text key={rowID}>index key={rowID} =={data.createTime} ={sectionID}== {rowID}</Text>
+                <Text key={rowID+100}>index key={rowID} =={data.createTime} ={sectionID}== {rowID}</Text>
             </View>
     }
 }
