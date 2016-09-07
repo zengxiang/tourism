@@ -10,7 +10,7 @@ import {
     TextInput,
 } from 'react-native';
 import Button from 'react-native-button';
-import {GetScreenWidth, GetListData} from './../PublicAction'
+import {GetScreenWidth,GetScreenHeight, GetListData} from './../PublicAction'
 import {Actions} from 'react-native-router-flux';
 
 import {GetRequestData} from './../http';
@@ -44,7 +44,7 @@ export default class Home extends Component {
                         </Image>
                     </View>
                 </View>
-                <List style={{height: 300}}
+                <List style={styles.container}
                       ref='listView'
                       renderRow={this.renderRow}
                       onFetching={this.fetch}
@@ -70,20 +70,18 @@ export default class Home extends Component {
 
 
         GetRequestData('',{},function(responseData){
-            alert(JSON.stringify(responseData));
+            // alert(JSON.stringify(responseData));
+
+            callback(responseData['forecast']['24h']['101010100']['1001001'], {allLoaded: page == 3?true:false});
+
         },function (error) {
             alert(JSON.stringify(error));
         });
 
-        setTimeout(() => {
-            callback(GetListData().data, {allLoaded: false});
-        }, 1000);
     }
 
     renderRow = (data, sectionID, rowID) => {
-        return <View key={rowID} style={{height: 100, width: 300}}>
-                <Text key={rowID+100}>index key={rowID} =={data.createTime} ={sectionID}== {rowID}</Text>
-            </View>
+        return  <Cell key={rowID} data={data}></Cell>
     }
 }
 
@@ -91,7 +89,7 @@ class Cell extends Component {
     render() {
         return (
             <View style={{height: 100, width: 300}}>
-                <Text>index {this.props.key} =={this.props.data.createTime} === {this.props.rowID}</Text>
+                <Text>index=={this.props.data['003']}</Text>
             </View>
         )
     }
@@ -122,18 +120,7 @@ const styles = {
         paddingHorizontal: 10,
     },
     container: {
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
+        height: GetScreenHeight()-64-44
     },
-    welcome: {
-        fontSize: 20,
-        textAlign: 'center',
-        margin: 10,
-    },
-    instructions: {
-        textAlign: 'center',
-        color: '#333333',
-        marginBottom: 5,
-    },
+
 };

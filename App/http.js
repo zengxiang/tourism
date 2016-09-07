@@ -27,7 +27,6 @@ export function PostRequestData(url, body, resolve, reject) {
 }
 
 export function GetRequestData(url, body, resolve, reject) {
-    // alert(HOST + url+'?'+toQueryString(body));
     fetch('http://apis.baidu.com/tianyiweather/basicforecast/weatherapi?area=101010100', {
         headers: {
             'Accept': 'application/json',
