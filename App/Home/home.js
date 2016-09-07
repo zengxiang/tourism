@@ -133,19 +133,21 @@ class HeaderSwiper extends Component {
     }
 }
 
+
 class Cell extends Component {
     constructor(props) {
         super(props);
         this.state = {};
-        alert(props);
     }
-
     render() {
         return (
             <View style={cellStyles.cellBg}>
                 <View style={cellStyles.cellBg1}>
                     <Image style={cellStyles.img} source={require('./../img/tu2.png')}>
-                        <Text  style={cellStyles.mark}>国内旅游</Text>
+                        <View style={{flexDirection: 'row'}}>
+                            <Text style={cellStyles.mark}>国内旅游</Text>
+                        </View>
+
                     </Image>
                 </View>
                 {/*<Text>index=={this.props.data['003']}</Text>*/}
@@ -173,11 +175,11 @@ const cellStyles = {
         width: GetScreenWidth() - 20,
         resizeMode: Image.resizeMode.stretch,
     },
-    mark:{
-        padding:10,
-        backgroundColor:'green',
-        color:'white',
-        fontSize:14,
+    mark: {
+        padding: 10,
+        backgroundColor: 'green',
+        color: 'white',
+        fontSize: 14,
     }
 }
 const styles = {
