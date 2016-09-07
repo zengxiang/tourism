@@ -67,7 +67,8 @@ export default class Home extends Component {
     }
 
     fetch = (page = 1, callback, options)=> {
-        
+
+
         GetRequestData('',{},function(responseData){
             alert(responseData);
         },function (error) {
