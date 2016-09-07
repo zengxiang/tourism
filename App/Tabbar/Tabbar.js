@@ -33,6 +33,7 @@ export default class TabbarVC extends Component {
                         <Scene key='tab1'  title='首页' icon={TabbarItem} idx={0} initial={true}>
                             <Scene
                                 key="Home"
+                                hideNavBar
                                 component={Home}
                                 title="首页"
                             />

@@ -30,7 +30,8 @@ export function GetRequestData(url, body, resolve, reject) {
     // alert(HOST + url+'?'+toQueryString(body));
     fetch('http://apis.baidu.com/tianyiweather/basicforecast/weatherapi?area=101010100', {
         headers: {
-            "apikey": "35256303bd6d6ddd8073f757669c6f73",
+            'Accept': 'application/json',
+            "apikey": "35256303bd6d6ddd8073f757669c6f73"
         },
         method: 'GET',
     }).then((response) => {
