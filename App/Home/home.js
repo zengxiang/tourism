@@ -77,9 +77,7 @@ export default class Home extends Component {
     }
 
     renderHeader = () => {
-        {
-            return <HeaderSwiper ></HeaderSwiper>
-        }
+        return <HeaderSwiper ></HeaderSwiper>
     }
 
     renderRow = (data, sectionID, rowID) => {
@@ -88,6 +86,7 @@ export default class Home extends Component {
 }
 
 class HeaderSwiper extends Component {
+
     render() {
         return (
             <Swiper style={swiperStyles.wrapper} height={200} autoplay={true}
@@ -118,7 +117,7 @@ class HeaderSwiper extends Component {
                 <View style={swiperStyles.slide}>
                     <Image style={swiperStyles.image}
                            source={{uri: 'http://a.hiphotos.baidu.com/image/w%3D310/sign=4459912736a85edffa8cf822795509d8/bba1cd11728b4710417a05bbc1cec3fdfc032374.jpg'}}>
-                        <Text numberOfLines={1} style={{color:'white'}}>Big lie behind Nine’s new show</Text>
+                        <Text numberOfLines={1} style={{color: 'white'}}>Big lie behind Nine’s new show</Text>
                     </Image>
                 </View>
                 <View style={swiperStyles.slide}>
@@ -135,12 +134,50 @@ class HeaderSwiper extends Component {
 }
 
 class Cell extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {};
+        alert(props);
+    }
+
     render() {
         return (
-            <View style={{height: 100, width: 300}}>
-                <Text>index=={this.props.data['003']}</Text>
+            <View style={cellStyles.cellBg}>
+                <View style={cellStyles.cellBg1}>
+                    <Image style={cellStyles.img} source={require('./../img/tu2.png')}>
+                        <Text  style={cellStyles.mark}>国内旅游</Text>
+                    </Image>
+                </View>
+                {/*<Text>index=={this.props.data['003']}</Text>*/}
             </View>
         )
+    }
+}
+
+
+const cellStyles = {
+    cellBg: {
+        height: 200,
+        paddingBottom: 8,
+        backgroundColor: '#f2f2f2'
+    },
+    cellBg1: {
+        backgroundColor: 'white',
+        flex: 1,
+        padding: 10,
+        borderBottomColor: '#dddddd',
+        borderBottomWidth: 1
+    },
+    img: {
+        height: 172,
+        width: GetScreenWidth() - 20,
+        resizeMode: Image.resizeMode.stretch,
+    },
+    mark:{
+        padding:10,
+        backgroundColor:'green',
+        color:'white',
+        fontSize:14,
     }
 }
 const styles = {
@@ -175,8 +212,7 @@ const styles = {
 };
 
 const swiperStyles = {
-    wrapper: {
-    },
+    wrapper: {},
 
     slide: {
         flex: 1,
