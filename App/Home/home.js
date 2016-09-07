@@ -9,7 +9,6 @@ import {
     Image,
     TextInput,
 } from 'react-native';
-
 import Button from 'react-native-button';
 import {GetScreenWidth, GetListData} from './../PublicAction'
 import {Actions} from 'react-native-router-flux';
@@ -68,14 +67,11 @@ export default class Home extends Component {
     }
 
     fetch = (page = 1, callback, options)=> {
-
-
-        GetRequestData('http://apis.baidu.com/apistore/weatherservice',{
-            'cityname':"武汉"
-        },function(responseData){
+        
+        GetRequestData('',{},function(responseData){
             alert(responseData);
         },function (error) {
-            alert(11+error);
+            alert(error);
         });
 
         setTimeout(() => {
