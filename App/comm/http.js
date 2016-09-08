@@ -27,11 +27,8 @@ export function PostRequestData(url, body, resolve, reject) {
 }
 
 export function GetRequestData(url, body, resolve, reject) {
-    fetch('http://apis.baidu.com/tianyiweather/basicforecast/weatherapi?area=101010100', {
-        headers: {
-            'Accept': 'application/json',
-            "apikey": "35256303bd6d6ddd8073f757669c6f73"
-        },
+    console.log(HOST + url +'?'+ toQueryString(body));
+    fetch(HOST + url +'?'+ toQueryString(body), {
         method: 'GET',
     }).then((response) => {
             return response.json();
