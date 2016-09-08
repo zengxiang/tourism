@@ -15,15 +15,9 @@ import TabbarItem from './TabbarItem';
 import Home from './../Home/home';
 import HomeDetail from './../Home/homeDetail';
 
-// import Page2 from './page2';
-// import Page3 from './page3';
+import TravelAdvisory from './../TravelAdvisory/TravelAdvisory'
+import TravelAdvisoryDetail from './../TravelAdvisory/TravelAdvisoryDetail'
 export default class TabbarVC extends Component {
-    _renderBackButton() {
-        return <View style={{flexDirection: 'row'}}>
-            <Text style={{marginRight: 10}}>收藏</Text>
-        </View>
-    }
-
     popVC = ()=> {
         Actions.pop();
     }
@@ -41,8 +35,8 @@ export default class TabbarVC extends Component {
             return (
                 <View>
                     <TouchableHighlight onPress={this.popVC}>
-                        <View style={{paddingHorizontal:10,paddingBottom:8}}>
-                            <Image style={{width:20,height:20}}  source={require('../img/icon_back.png')}/>
+                        <View style={{paddingHorizontal: 10 , paddingBottom: 8}}>
+                            <Image style={{width: 20 , height: 20}} source={require('../img/icon_back.png')}/>
                         </View>
                     </TouchableHighlight>
                 </View>
@@ -53,7 +47,7 @@ export default class TabbarVC extends Component {
             <Router key='modal'>
                 <Scene key='root'>
                     <Scene key='tabbar' tabs={true} style={{backgroundColor: '#eeeeee'}}>
-                        <Scene key='tab1' renderBackButton={this._renderBackButton}
+                        <Scene key='tab1'
                                navigationBarStyle={navStyles.bgColor} titleStyle={navStyles.titleColor} title='首页'
                                icon={TabbarItem} idx={0} initial={true}>
                             <Scene
@@ -64,20 +58,34 @@ export default class TabbarVC extends Component {
                             />
                             <Scene
                                 key="HomeDetail"
-                                renderBackButton={renderBackButton}
                                 hideNavBar={false}
+                                hideTabBar={true}
+                                renderBackButton={renderBackButton}
                                 component={HomeDetail}
                                 title="首页详情"
                             />
                             <Scene
                                 key="HomeDetail1"
+                                renderBackButton={renderBackButton}
                                 hideNavBar={false}
                                 component={HomeDetail}
                                 title="首页详情"
                             />
                         </Scene>
-                        <Scene key='tab2' component={Home} title='消息' icon={TabbarItem} idx={1}
-                               navigationBarStyle={navStyles.bgColor} titleStyle={navStyles.titleColor}/>
+                        <Scene key='tab2'  title='旅游咨询' icon={TabbarItem} idx={1}
+                               navigationBarStyle={navStyles.bgColor} titleStyle={navStyles.titleColor}>
+                            <Scene
+                                key="TravelAdvisory"
+                                component={TravelAdvisory}
+                                title="旅游咨询"
+                            />
+                            <Scene
+                                key="TravelAdvisoryDetail"
+                                component={TravelAdvisoryDetail}
+                                hideTabBar={true}
+                                title="旅游咨询详情"
+                            />
+                        </Scene>
                         <Scene key='tab3' component={Home} title='发现' icon={TabbarItem} idx={2}
                                navigationBarStyle={navStyles.bgColor} titleStyle={navStyles.titleColor}
                                renderRightButton={rightButton}/>

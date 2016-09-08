@@ -81,7 +81,7 @@ class HeaderSwiper extends Component {
         return (
             <Swiper style={swiperStyles.wrapper} height={200} autoplay={true}
                     onMomentumScrollEnd={function (e , state , context) {
-                        console.log('index:' , state.index)
+                        {/*console.log('index:' , state.index)*/}
                     }}
                     dot={<View style={{
                         backgroundColor: 'rgba(255,255,255,.2)' ,
