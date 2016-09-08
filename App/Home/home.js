@@ -140,19 +140,21 @@ class Cell extends Component {
         this.state = {};
     }
     render() {
-        return (
-            <View style={cellStyles.cellBg}>
-                <View style={cellStyles.cellBg1}>
-                    <Image style={cellStyles.img} source={require('./../img/tu2.png')}>
-                        <View style={{flexDirection: 'row'}}>
-                            <Text style={cellStyles.mark}>国内旅游</Text>
-                        </View>
+        return <View style={cellStyles.cellBg}>
+            <View style={cellStyles.cellBg1}>
+                <Image style={cellStyles.img} source={require('./../img/tu2.png')}>
+                    <View style={{flexDirection: 'row'}}>
+                        <Text style={[cellStyles.WhiteFont , {backgroundColor: "green"}]}>国内旅游</Text>
+                    </View>
+                    <View style={cellStyles.bottomView}>
 
-                    </Image>
-                </View>
-                {/*<Text>index=={this.props.data['003']}</Text>*/}
+                        <Text style={cellStyles.WhiteFont}>国内旅游1111</Text>
+                        <Text style={[cellStyles.WhiteFont , {backgroundColor: "#ff9900"}]}>国内旅游</Text>
+                    </View>
+                </Image>
             </View>
-        )
+            {/*<Text>index=={this.props.data['003']}</Text>*/}
+        </View>
     }
 }
 
@@ -170,17 +172,26 @@ const cellStyles = {
         borderBottomColor: '#dddddd',
         borderBottomWidth: 1
     },
+    //子试图上下对齐
     img: {
         height: 172,
         width: GetScreenWidth() - 20,
         resizeMode: Image.resizeMode.stretch,
+        flexDirection:"column",
+        justifyContent:"space-between"
     },
-    mark: {
+    WhiteFont: {
         padding: 10,
-        backgroundColor: 'green',
         color: 'white',
         fontSize: 14,
-    }
+    },
+    //子试图左右对齐
+    bottomView:{
+        backgroundColor:'rgba(0,0,0,0.4)',
+        flexDirection: 'row',
+        justifyContent:'space-between',
+        alignItems: "center"
+    },
 }
 const styles = {
     navBg: {
