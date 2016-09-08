@@ -17,8 +17,7 @@ export default class HomeDetail extends Component {
         return (
             <View style={styles.container}>
                 <Button onPress={Actions.pop}>返回</Button>
-
-                <Text style={styles.welcome} onPress={Actions.pop}>
+                <Text style={styles.welcome} onPress={Actions.HomeDetail1}>
                     Welcome to Page1_1 {this.props.title}
                 </Text>
                 <Text style={styles.instructions}>

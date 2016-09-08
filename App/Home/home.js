@@ -24,10 +24,6 @@ export default class Home extends Component {
         this.state = {};
     }
 
-    _handlePress() {
-        Actions.HomeDetail();
-    }
-
     render() {
         return (
             <View>
@@ -53,16 +49,6 @@ export default class Home extends Component {
                       pullDownRefreshable={true}
                       pullUpRefreshable={true}
                 />
-                {/*<Button onPress={Actions.tab2}>跳到消息页面</Button>*/}
-                {/*<Button onPress={Actions.HomeDetail}>push Detail</Button>*/}
-                {/*<Button*/}
-                {/*style={{fontSize: 20, color: 'green'}}*/}
-                {/*styleDisabled={{color: 'red'}}*/}
-                {/*onPress={this._handlePress}>*/}
-                {/*push Detail(方法里跳转)*/}
-                {/*</Button>*/}
-                {/*<Button onPress={Actions.HomeDetail1}>隐藏nav</Button>*/}
-                {/*<Button onPress={Actions.HomeDetail2}>隐藏tab</Button>*/}
 
             </View>
         )
@@ -91,7 +77,6 @@ export default class Home extends Component {
 }
 
 class HeaderSwiper extends Component {
-
     render() {
         return (
             <Swiper style={swiperStyles.wrapper} height={200} autoplay={true}
@@ -138,7 +123,6 @@ class HeaderSwiper extends Component {
     }
 }
 
-
 class Cell extends Component {
     get TouchableHighlightTap() {
         return this._TouchableHighlightTap;
@@ -153,7 +137,7 @@ class Cell extends Component {
     }
 
     _TouchableHighlightTap = ()=> {
-        alert('_TouchableHighlightTap');
+        Actions.HomeDetail();
     }
 
     _buttonTap() {
@@ -176,7 +160,6 @@ class Cell extends Component {
                     </Image>
                 </View>
             </TouchableHighlight>
-
         </View>
     }
 }
@@ -242,7 +225,7 @@ const styles = {
         paddingHorizontal: 10 ,
     } ,
     container: {
-        height: GetScreenHeight() - 64 - 44
+        height: GetScreenHeight() - 64 - 50
     } ,
 
 };
