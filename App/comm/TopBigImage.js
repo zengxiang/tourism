@@ -15,18 +15,21 @@ export default class TopBigImage extends Component {
 
     constructor(props) {
         super(props);
-        this.state = {};
-        console.log(this.props);
     }
+
+    bbb = ()=> {
+        this.props.doTap('red');
+    }
+
 
     render() {
         return (
-            <View>
+            <Button onPress={this.bbb}>
                 <Image style={styles.img} source={this.props.imgUrl}>
                     <Text style={styles.bigTitle}>{this.props.bigTitle}</Text>
                     <Text style={styles.subTitle}>{this.props.subTitle}</Text>
                 </Image>
-            </View>
+            </Button>
         );
     }
 }
@@ -34,23 +37,23 @@ export default class TopBigImage extends Component {
 const styles = {
     img: {
         // flex:1,
-        height: GetScreenWidth()/698*340 ,
+        height: GetScreenWidth() / 698 * 340 ,
         // resizeMode: Image.resizeMode.cover ,
         width: GetScreenWidth() ,
-        paddingHorizontal: 20,
-        justifyContent: 'center',
+        paddingHorizontal: 20 ,
+        justifyContent: 'center' ,
 
     } ,
     bigTitle: {
         fontSize: 30 ,
         fontWeight: 'bold' ,
         color: 'white' ,
-        backgroundColor:'rgba(0,0,0,0)'
+        backgroundColor: 'rgba(0,0,0,0)'
     } ,
     subTitle: {
         fontSize: 14 ,
         color: 'white' ,
-        backgroundColor:'rgba(0,0,0,0)',
-        paddingTop:10
-    },
+        backgroundColor: 'rgba(0,0,0,0)' ,
+        paddingTop: 10
+    } ,
 };

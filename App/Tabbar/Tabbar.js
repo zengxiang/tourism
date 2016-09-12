@@ -17,6 +17,13 @@ import HomeDetail from './../Home/homeDetail';
 
 import TravelAdvisory from './../TravelAdvisory/TravelAdvisory'
 import TravelAdvisoryDetail from './../TravelAdvisory/TravelAdvisoryDetail'
+
+import Find from './../Find/Find'
+import FindDetail from './../Find/FindDetail'
+
+import AirTickets from './../AirTickets/AirTickets'
+import AirTicketsDetial from  './../AirTickets/AirTicketsDetial'
+
 export default class TabbarVC extends Component {
     popVC = ()=> {
         Actions.pop();
@@ -64,15 +71,8 @@ export default class TabbarVC extends Component {
                                 component={HomeDetail}
                                 title="首页详情"
                             />
-                            <Scene
-                                key="HomeDetail1"
-                                renderBackButton={renderBackButton}
-                                hideNavBar={false}
-                                component={HomeDetail}
-                                title="首页详情"
-                            />
                         </Scene>
-                        <Scene key='tab2'  title='旅游咨询' icon={TabbarItem} idx={1}
+                        <Scene key='tab2' title='旅游咨询' icon={TabbarItem} idx={1}
                                navigationBarStyle={navStyles.bgColor} titleStyle={navStyles.titleColor}>
                             <Scene
                                 key="TravelAdvisory"
@@ -86,23 +86,42 @@ export default class TabbarVC extends Component {
                                 title="旅游咨询详情"
                             />
                         </Scene>
-                        <Scene key='tab3' component={Home} title='发现' icon={TabbarItem} idx={2}
+                        <Scene key='tab3' title='风景欣赏' icon={TabbarItem} idx={2}
                                navigationBarStyle={navStyles.bgColor} titleStyle={navStyles.titleColor}
-                               renderRightButton={rightButton}/>
-                        <Scene key='tab4' component={Home} title='我的' icon={TabbarItem} idx={3}
+                               renderRightButton={rightButton}>
+                            <Scene
+                                key="Find"
+                                component={Find}
+                                title="风景欣赏"
+                            />
+                            <Scene
+                                key="FindDetail"
+                                component={FindDetail}
+                                hideTabBar={true}
+                                title="风景欣赏详情"
+                            />
+                        </Scene>
+                        <Scene key='tab4' title='机票订购' icon={TabbarItem} idx={3}
                                onLeft={() => alert("Left button!")} leftTitle="Left"
                                onRight={() => alert("Right button")}
                                navigationBarStyle={navStyles.bgColor} titleStyle={navStyles.titleColor}
-                               rightTitle="Right"/>
+                               rightTitle="Right">
+                            <Scene
+                                key="AirTickets"
+                                component={AirTickets}
+                                title="机票订购"
+                            />
+                            <Scene
+                                key="AirTicketsDetial"
+                                component={AirTicketsDetial}
+                                hideTabBar={true}
+                                title="机票订购详情"
+                            />
+
+
+                        </Scene>
                     </Scene>
                 </Scene>
-
-                {/*//公共页面最好这写这里 方便重用*/}
-                <Scene
-                    key="Page1_2"
-                    component={HomeDetail}
-                    title="Page1_1"
-                />
             </Router>
         );
     }

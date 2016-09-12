@@ -1,5 +1,5 @@
 /**
- * Created by zengxiang on 16/9/5.
+ * Created by zengxiang on 16/9/12.
  */
 'use strict'
 import React, { Component } from 'react';
@@ -10,20 +10,13 @@ import {
 import {Actions} from 'react-native-router-flux';
 import Button from 'react-native-button';
 
-export default class TravelAdvisoryDetail extends Component {
- constructor(props){
-     super(props);
-     alert(this.props.name);
- }
+export default class FindDetail extends Component {
 
- _doTapCallBack = ()=>{
-     this.props.action('red');
- }
 
     render() {
         return (
             <View style={styles.container}>
-                <Button onPress={this._doTapCallBack}>回调改变背景色</Button>
+                <Button onPress={Actions.pop}>返回</Button>
                 <Text style={styles.instructions}>
                     To get started, edit index.android.js
                 </Text>

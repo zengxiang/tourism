@@ -9,9 +9,7 @@ import {
 } from 'react-native';
 import {Actions} from 'react-native-router-flux';
 import Button from 'react-native-button';
-
 export default class HomeDetail extends Component {
-
 
     render() {
         return (
