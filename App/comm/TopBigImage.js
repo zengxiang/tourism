@@ -20,8 +20,6 @@ export default class TopBigImage extends Component {
     bbb = ()=> {
         this.props.doTap('red');
     }
-
-
     render() {
         return (
             <Button onPress={this.bbb}>

@@ -24,25 +24,30 @@ export default class TravelAdvisory extends Component {
 
     constructor(props) {
         super(props);
-        this.state = {'bgColor':"white"};
+        this.state = {'bgColor': "white"};
     }
-    _callBackAction =(a) =>{
-         alert(a);
-        this.setState({'bgColor':a});
+
+    _callBackAction = (a) => {
+        alert(a);
+        this.setState({'bgColor': a});
     }
     _onTap = (a)=> {
         Actions.TravelAdvisoryDetail({
-            'obj':1,
-            'name':'222',
-            'action':this._callBackAction
+            'obj': 1 ,
+            'name': '222' ,
+            'action': this._callBackAction
         });
     }
+
     render() {
         return (
-            <View style={[styles.container,{backgroundColor:this.state.bgColor}]}>
+            <View style={[styles.container , {backgroundColor: this.state.bgColor}]}>
                 <View style={{height: 64}}></View>
-                <TopBigImage imgUrl={require('./../img/tu4.png')} bigTitle="旅游咨询"
-                             subTitle="介绍各种最新的旅行信息，景点攻略" doTap={this._onTap}></TopBigImage>
+                <TopBigImage imgUrl={require('./../img/tu4.png')}
+                             bigTitle="旅游咨询"
+                             subTitle="介绍各种最新的旅行信息，景点攻略"
+                             doTap={this._onTap}>
+                </TopBigImage>
             </View>
         );
     }
