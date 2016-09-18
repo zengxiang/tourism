@@ -18,13 +18,16 @@ export default class Find extends Component {
         super(props);
         this.state = {};
     }
+    doTap=(a)=>{
+        alert(a);
+    };
 
     render() {
         return (
             <View style={styles.container}>
                 <View style={{height: 64}}></View>
                 <TopBigImage imgUrl={require('./../img/tu3.png')} bigTitle="风景欣赏"
-                             subTitle="旅游景点的图片集合等"></TopBigImage>
+                             subTitle="旅游景点的图片集合等" doTap={this.doTap} ></TopBigImage>
             </View>
         );
     }
