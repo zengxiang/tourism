@@ -17,13 +17,28 @@ export default class TravelAdvisoryDetail extends Component {
  }
 
  _doTapCallBack = ()=>{
-     this.props.action('red');
+     if(this.props.obj == 1)
+     {
+         this.props.action('red');
+     }else {
+         this.props.action('yellow');
+     }
+     Actions.pop();
  }
 
     render() {
+        let  callBackText ;
+        if(this.props.obj == 1)
+        {
+            callBackText = "回调改变cell背景为红色";
+        }else {
+            callBackText = "回调改变cell背景为黄色";
+
+        }
+
         return (
             <View style={styles.container}>
-                <Button onPress={this._doTapCallBack}>回调改变背景色</Button>
+                <Button onPress={this._doTapCallBack}>{callBackText}</Button>
                 <Text style={styles.instructions}>
                     To get started, edit index.android.js
                 </Text>
