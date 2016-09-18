@@ -4,7 +4,6 @@ import {
 	Image
 } from 'react-native';
 
-// import Frame from './frame';
 import TabbarVC from './Tabbar';
 
 export default class Default extends Component {
