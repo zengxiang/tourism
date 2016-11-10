@@ -141,7 +141,7 @@ class Cell extends Component {
     }
 
     _buttonTap() {
-        alert('buttonTap');
+        alert('buttonTap11');
     }
 
     render() {
